@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="client/app/app.js"></script>
+    <script src="client/app/foodService.js"></script>
+    <script src="client/app/foodController.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="col-md-12" ng-app="foodie" ng-controller="foodController as vm">
+        {{vm.hello}}
+
+        <ul class="nav child_menu">
+            <li ng-repeat="item in vm.menuItems | limitTo:20">
+                #{{$index+1}}  - {{item.items}} : {{item.length}}
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>
